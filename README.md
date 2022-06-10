@@ -4,4 +4,5 @@ Esse é o projeto que desenvolvi para a cadeira de POO (Programação orientada 
 É um sistema que foi criado por mim para auxiliar na captação de informações sobrepessoas desaparecidas, é uma aplicação web/php/mysql
 desenvolvido na arquitetura MVC, possui telas de login e cadastro funcionais, uma landing page com informações 
 das pessoas desaparecidas que é exibida num carrossel, e que da ao usuário a possibilidade de consultar detalhes da pessoa
-e contribuir com informações que podem ser cadastradas na tela de cadastro de informações da pessoa em questão.
+e contribuir com informações que podem ser cadastradas na tela de cadastro de informações da pessoa em questão. Para utilizar basta
+baixar o conteúdo e importar a base de dados que acompanha o projeto, e executar usando o Xampp ou Easyphp-devServer.
