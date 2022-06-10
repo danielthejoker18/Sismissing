@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./views/site/FirstAccess/dist/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./views/site/FirstAccess/dist/css/util.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="./views/site/FirstAccess/dist/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" method="POST">
+					<span class="login100-form-title p-b-26">
+						Configuração Inicial
+						<input class="input100" type="hidden" name="post" id="post" value="config">
+					</span>
+
+					<div class="wrap-input100">
+						<input class="input100" type="text" name="st_fullName" id="st_fullName">
+						<span class="focus-input100" data-placeholder="Nome do Sistema"></span>
+					</div>
+
+                    <div class="wrap-input100">
+                        <input class="input100" type="text" name="st_shortName" id="st_shortName">
+                        <span class="focus-input100" data-placeholder="Nome Abreviado do Sistema"></span>
+                    </div>
+					<div class="wrap-input100">
+						<input class="input100" type="text" name="st_url" id="st_url">
+						<span class="focus-input100" data-placeholder="URL Padrão"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="submit">
+								Acessar o Sistema
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

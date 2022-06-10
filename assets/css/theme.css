@@ -1,0 +1,161 @@
+
+.form-block{
+    border: 1px solid #007E7A;
+    border-radius: 10px;
+    background-color: #FFF;
+}
+
+.form-title{
+    font-family: Comic Sans MS, Gadget, sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #949494;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+.control_check {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    padding-top: 0px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.control_check input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.control_check_indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border: 0px solid #000000;
+    border-radius: 19px;
+}
+.control_check:hover input ~ .control_check_indicator,
+.control_check input:focus ~ .control_check_indicator {
+    background: #cccccc;
+}
+
+.control_check input:checked ~ .control_check_indicator {
+    background: #598b5b;
+}
+.control_check:hover input:not([disabled]):checked ~ .control_check_indicator,
+.control_check input:checked:focus ~ .control_check_indicator {
+    background: #0e6647d;
+}
+.control_check input:disabled ~ .control_check_indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.control_check_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control_check input:checked ~ .control_check_indicator:after {
+    display: block;
+}
+.control_check-checkbox .control_check_indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.control_check-checkbox input:disabled ~ .control_check_indicator:after {
+    border-color: #7b7b7b;
+}
+.control_check-checkbox .control_check_indicator::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: -1.3rem;
+    margin-top: -1.3rem;
+    background: #2aa1c0;
+    border-radius: 3rem;
+    opacity: 0.6;
+    z-index: 99999;
+    transform: scale(0);
+}
+@keyframes s-ripple {
+    0% {
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes s-ripple-dup {
+    0% {
+        transform: scale(0);
+    }
+    30% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+.control_check-checkbox input + .control_check_indicator::before {
+    /*animation: s-ripple 250ms ease-out;*/
+}
+.control_check-checkbox input:checked + .control_check_indicator::before {
+    animation-name: s-ripple-dup;
+}
+
+.button-div{
+     width: 100%;
+     /*height: 100%;*/
+     background-color: #FFF;
+     border: 2px solid;
+     border-color: #d3d3d3;
+     border-radius: 10px;
+     padding: 20px;
+}
+.button-div:hover{
+    /*background-color: #e8e8e8;*/
+    border-color: #007E7A;
+}
+
+.progress-title{
+    background-color: white;
+    border-radius: 7px;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+.progress-div {
+    background-color: white;
+    /*border-radius: 5px;*/
+    border-right: 0.1px solid;
+    border-left: 0.1px solid;
+	border-color:#E8E8E8;
+    padding: 15px;
+}

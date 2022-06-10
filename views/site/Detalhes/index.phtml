@@ -1,0 +1,98 @@
+<?php
+session_start();
+require_once "models/DetalhesModel.php";
+require_once "models/InfosModel.php";
+$o_detalhes = new DetalhesModel($_GET['id']);
+include "views/layout/header.phtml";
+include "views/layout/navbar.phtml";
+?>
+<div class="container">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="<?php echo $o_detalhes->getFoto().'/'.$o_detalhes->getId().'/400/400'?>" alt="" >
+    <h2><?php echo $o_detalhes->getName()?></h2>
+    <p class="lead"><?php echo $o_detalhes->getDescricao()?></p>
+  </div>
+  <form class="content" method="POST">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Nos ajude com informações!</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group col-sm-4">
+                <label for="nome">Nome</label>
+                <input id="st_nome" name="st_nome" class="form-control" rows="2" value="<?php echo $o_detalhes->getName()?>" readonly></input>
+              </div>
+              <div class="form-group col-sm-1">
+                <label for="idade">Idade</label>
+                <input id="idade" name="idade" class="form-control" rows="2" value="<?php echo $o_detalhes->getIdade()?>" readonly></input>
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="descOcorr">Descrição do ocorrido</label>
+                <textarea id="descOcorr" name="descOcorr" class="form-control" rows="3" readonly><?php echo $o_detalhes->getDescricao()?></textarea>
+              </div>
+              <div class="form-group col-sm-2">
+                <label for="data_desap">Desaparecido em:</label>
+                <input id="data_desap" name="data_desap" class="form-control" rows="2" value="<?php echo $o_detalhes->getDataDesap()?>" readonly></input>
+              </div>
+              <div class="form-group col-sm-2">
+                <label for="data_cad">Cadastrado no Sistema em:</label>
+                <input id="data_cad" name="data_cad" class="form-control" rows="2" value="<?php echo $o_detalhes->getDataCad()?>" readonly></input>
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Preencha o campo abaixo com informações que possam ajudar na localização!</label>
+                <textarea id="st_descricao" name="st_descricao" class="form-control" rows="4"></textarea>
+                <input type="text" name="in_id_desaparecido" value="<?php echo $o_detalhes->getId()?>" hidden>
+                <input type="text" name="in_id_user" value="<?php echo $_SESSION['in_id']?>" hidden>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-right">
+          <a href="?ctrl=Home&act=LandPage" class="btn btn-secondary">Cancelar</a>
+          <input type="submit" id="enviar" value="Salvar" class="btn btn-success">
+        </div>
+      </div>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    //     enviar = document.getElementById('enviar');
+    //     enviar.addEventListener("click", function create () {
+    //     st_info = $("#st_descricao").val();
+    //     url = (params = new URLSearchParams(window.location.search)).toString();
+    //     split = url.split("&");
+    //     id_val = split[2].split("=");
+    //     id = id_val[1];
+    //     $.ajax({
+    //         type: "post",    //request type,
+    //         url:"views/site/grava.php",    //the page containing php script
+    //         data: {st_info: st_info, id: id},
+    //         dataType: 'json',
+    //         success:function(result){
+    //           Swal.fire(result);
+    //         },
+    //             error: function(result) {
+    //                 Swal.fire("Dados não encontrados");
+    //             }
+    //     });
+    // });
+
+
+</script>
+<?php
+include "views/layout/footer.phtml";
+include "views/layout/scriptjs.phtml";
+?>

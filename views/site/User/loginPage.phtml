@@ -1,0 +1,76 @@
+<?php
+$v_params = $this->getParams();
+$pageTitle = $v_params['pageTitle'];
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo $pageTitle;?></title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/Sismissing/vendor/almasaeed2010/adminlte/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="/Sismissing/vendor/almasaeed2010/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/Sismissing/vendor/almasaeed2010/adminlte/dist/css/adminlte.css">
+
+</head>
+<body class="hold-transition register-page">
+<div class="login-box">
+    <!-- /.login-logo -->
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a href="#" class="h1"><b>Sismissing</b></a>
+        </div>
+        <div class="card-body">
+            <p class="login-box-msg">Faça o Login para iniciar a sessão</p>
+
+            <form method="POST">
+              <div class="input-group mb-3">
+                <input type="email" id="st_mail" name="st_mail" class="form-control" placeholder="Email" required>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="password" id="st_password" name="st_password" class="form-control" placeholder="Senha" required>
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col -->
+              <div class="col-12">
+                <input type="hidden" id="type" name="type" class="form-control" value="Login">
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+              </div>
+              <!-- /.col -->
+            </form>
+        </div><!-- /.card-body -->
+
+        <p class="mb-0">
+            <a href="?ctrl=User&act=addUser" class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;Cadastrar novo usuário</a>
+        </p>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="/Sismissing/vendor/almasaeed2010/adminlte/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/Sismissing/vendor/almasaeed2010/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/Sismissing/vendor/almasaeed2010/adminlte/dist/js/adminlte.js"></script>
+</body>
+</html>

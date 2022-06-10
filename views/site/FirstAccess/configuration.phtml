@@ -1,0 +1,351 @@
+<?php
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configuração Inicial</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+    <style>
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            background-color: #fff;
+        }
+
+        .hold-transition .content-wrapper,
+        .hold-transition .main-header,
+        .hold-transition .main-sidebar,
+        .hold-transition .main-sidebar *,
+        .hold-transition .control-sidebar,
+        .hold-transition .control-sidebar *,
+        .hold-transition .main-footer {
+            transition: none !important;
+            -webkit-animation-duration: 0s !important;
+            animation-duration: 0s !important;
+        }
+
+        .register-page {
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background-color: #e9ecef;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            height: 100vh;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .register-box {
+            width: 360px;
+        }
+
+        @media (max-width: 576px) {
+            .register-box {
+                margin-top: .5rem;
+                width: 90%;
+            }
+        }
+
+        .register-box .card {
+            margin-bottom: 0;
+        }
+
+        .register-box-msg {
+            margin: 0;
+            padding: 0 20px 20px;
+            text-align: center;
+        }
+
+        .card {
+            position: relative;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 0 solid rgba(0, 0, 0, 0.125);
+            border-radius: 0.25rem;
+        }
+
+
+        .card-primary:not(.card-outline) > .card-header {
+            background-color: #007bff;
+        }
+
+        .card-primary:not(.card-outline) > .card-header,
+        .card-primary:not(.card-outline) > .card-header a {
+            color: #fff;
+        }
+
+        .card-primary:not(.card-outline) > .card-header a.active {
+            color: #1f2d3d;
+        }
+
+        .card-primary.card-outline {
+            border-top: 3px solid #007bff;
+        }
+
+        .card-primary.card-outline-tabs > .card-header a:hover {
+            border-top: 3px solid #dee2e6;
+        }
+
+        .card-primary.card-outline-tabs > .card-header a.active {
+            border-top: 3px solid #007bff;
+        }
+
+        .bg-primary > .card-header .btn-tool,
+        .bg-gradient-primary > .card-header .btn-tool,
+        .card-primary:not(.card-outline) > .card-header .btn-tool {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .bg-primary > .card-header .btn-tool:hover,
+        .bg-gradient-primary > .card-header .btn-tool:hover,
+        .card-primary:not(.card-outline) > .card-header .btn-tool:hover {
+            color: #fff;
+        }
+
+        .card-primary:not(.card-outline) > .card-header {
+            background-color: #007bff;
+        }
+
+        .card-primary:not(.card-outline) > .card-header,
+        .card-primary:not(.card-outline) > .card-header a {
+            color: #fff;
+        }
+
+        .card-primary:not(.card-outline) > .card-header a.active {
+            color: #1f2d3d;
+        }
+
+        .card-primary.card-outline {
+            border-top: 3px solid #007bff;
+        }
+
+        .card-primary.card-outline-tabs > .card-header a:hover {
+            border-top: 3px solid #dee2e6;
+        }
+
+        .card-primary.card-outline-tabs > .card-header a.active {
+            border-top: 3px solid #007bff;
+        }
+
+        .bg-primary > .card-header .btn-tool,
+        .bg-gradient-primary > .card-header .btn-tool,
+        .card-primary:not(.card-outline) > .card-header .btn-tool {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .bg-primary > .card-header .btn-tool:hover,
+        .bg-gradient-primary > .card-header .btn-tool:hover,
+        .card-primary:not(.card-outline) > .card-header .btn-tool:hover {
+            color: #fff;
+        }
+
+        .card-body {
+            color: #fff;
+        }
+
+        .card-body {
+            display: block !important;
+        }
+
+        .card.maximized-card .card-body {
+            overflow: auto;
+        }
+
+        .login-box-msg,
+        .register-box-msg {
+            margin: 0;
+            padding: 0 20px 20px;
+            text-align: center;
+        }
+
+        .input-group-prepend ~ .select2-container--default .select2-selection {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        .input-group > .select2-container--default:not(:last-child) .select2-selection {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+
+        .input-group-prepend .btn + .btn,
+        .input-group-prepend .btn + .input-group-text,
+        .input-group-prepend .input-group-text + .input-group-text,
+        .input-group-prepend .input-group-text + .btn,
+        .input-group-append .btn + .btn,
+        .input-group-append .btn + .input-group-text,
+        .input-group-append .input-group-text + .input-group-text,
+        .input-group-append .input-group-text + .btn {
+            margin-left: -1px;
+        }
+
+        .input-group-prepend {
+            margin-right: -1px;
+        }
+
+        .input-group-append {
+            margin-left: -1px;
+        }
+
+        .input-group-text {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 0.375rem 0.75rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+
+        .input-group-text input[type="radio"],
+        .input-group-text input[type="checkbox"] {
+            margin-top: 0;
+        }
+
+        .input-group-lg > .form-control:not(textarea),
+        .input-group-lg > .custom-select {
+            height: calc(2.875rem + 2px);
+        }
+
+        .input-group-lg > .form-control,
+        .input-group-lg > .custom-select,
+        .input-group-lg > .input-group-prepend > .input-group-text,
+        .input-group-lg > .input-group-append > .input-group-text,
+        .input-group-lg > .input-group-prepend > .btn,
+        .input-group-lg > .input-group-append > .btn {
+            padding: 0.5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: 0.3rem;
+        }
+
+        .input-group-sm > .form-control:not(textarea),
+        .input-group-sm > .custom-select {
+            height: calc(1.8125rem + 2px);
+        }
+
+        .input-group-sm > .form-control,
+        .input-group-sm > .custom-select,
+        .input-group-sm > .input-group-prepend > .input-group-text,
+        .input-group-sm > .input-group-append > .input-group-text,
+        .input-group-sm > .input-group-prepend > .btn,
+        .input-group-sm > .input-group-append > .btn {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            border-radius: 0.2rem;
+        }
+
+        .input-group-lg > .custom-select,
+        .input-group-sm > .custom-select {
+            padding-right: 1.75rem;
+        }
+
+        .input-group > .input-group-prepend > .btn,
+        .input-group > .input-group-prepend > .input-group-text,
+        .input-group:not(.has-validation) > .input-group-append:not(:last-child) > .btn,
+        .input-group:not(.has-validation) > .input-group-append:not(:last-child) > .input-group-text,
+        .input-group.has-validation > .input-group-append:nth-last-child(n + 3) > .btn,
+        .input-group.has-validation > .input-group-append:nth-last-child(n + 3) > .input-group-text,
+        .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+        .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .input-group > .input-group-append > .btn,
+        .input-group > .input-group-append > .input-group-text,
+        .input-group > .input-group-prepend:not(:first-child) > .btn,
+        .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+        .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+        .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    </style>
+
+</head>
+<body class="hold-transition register-page">
+<div class="register-box">
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a href="?controle=Home&acao=LandPage" class="h1"><b>Sismissing</b></a>
+        </div>
+        <div class="card-body">
+            <p class="login-box-msg">Configuração Inicial</p>
+
+            <form method="POST">
+                <div class="input-group mb-3">
+                    <input type="text" id="st_fullName" name="st_fullName" class="form-control" placeholder="Nome completo" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" id="st_shortName" name="st_shortName" class="form-control" placeholder="Nome Abreviado" required>
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <small>Ao prosseguir o sistema instalará todas as suas dependências de banco de dados!</small>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block">Prosseguir</button>
+                    </div><!-- /.col -->
+                </div>
+            </form>
+
+        </div><!-- /.form-box -->
+    </div><!-- /.card -->
+</div><!-- /.register-box -->
+</body>
+</html>

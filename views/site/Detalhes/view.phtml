@@ -1,0 +1,97 @@
+<?php
+session_start();
+require_once "models/DetalhesModel.php";
+require_once "models/InfosModel.php";
+$o_detalhes = new DetalhesModel($_GET['id']);
+$o_infos = new InfosModel();
+include "views/layout/header.phtml";
+include "views/layout/navbar.phtml";
+?>
+<div class="container">
+  <div class="py-5 text-left">
+    <img class="mx-auto mb-4" src="<?php echo $o_detalhes->getFoto().'/'.$o_detalhes->getId().'/300/300'?>" alt="" >
+    <h2><?php echo $o_detalhes->getName()?></h2>
+    <p class="lead"><?php echo $o_detalhes->getDescricao()?></p>
+  </div>
+  <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Informações do Desaparecido!</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group col-sm-4">
+                <label for="nome">Nome</label>
+                <input id="st_nome" name="st_nome" class="form-control" rows="2" value="<?php echo $o_detalhes->getName()?>" readonly></input>
+              </div>
+              <div class="form-group col-sm-1">
+                <label for="idade">Idade</label>
+                <input id="idade" name="idade" class="form-control" rows="2" value="<?php echo $o_detalhes->getIdade()?>" readonly></input>
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="descOcorr">Descrição do ocorrido</label>
+                <textarea id="descOcorr" name="descOcorr" class="form-control" rows="2" readonly><?php echo $o_detalhes->getDescricao()?></textarea>
+              </div>
+              <div class="form-group col-sm-2">
+                <label for="data_desap">Desaparecido em:</label>
+                <input id="data_desap" name="data_desap" class="form-control" rows="2" value="<?php echo $o_detalhes->getDataDesap()?>" readonly></input>
+              </div>
+              <div class="form-group col-sm-2">
+                <label for="data_cad">Cadastrado no Sistema em:</label>
+                <input id="data_cad" name="data_cad" class="form-control" rows="2" value="<?php echo $o_detalhes->getDataCad()?>" readonly></input>
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Informações existentes até o momento</label>
+                <!--textarea id="st_descricao" name="st_descricao" class="form-control" rows="4" readonly></textarea-->
+
+              </div>
+              <div class="card direct-chat direct-chat-primary">
+                  <div class="card-header">
+                      <h3 class="card-title">Informações</h3>
+
+                      <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                              <i class="fas fa-minus"></i>
+                          </button>
+                      </div>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                      <!-- Conversations are loaded here -->
+                      <div class="direct-chat-messages">
+                          <?php
+                            echo $o_infos->showInfos($_GET['id'])
+                          ?>
+                      </div>
+                  </div>
+                  <!-- /.card-footer-->
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-right">
+          <a href="?ctrl=detalhes&act=edit&id=<?php echo $_REQUEST['id']?>" class="btn btn-primary">Adicionar Informações</a>
+          <a href="?ctrl=Home&act=LandPage" class="btn btn-secondary">Cancelar</a>
+        </div>
+      </div>
+    </section>
+</div>
+
+<script>
+
+</script>
+<?php
+include "views/layout/footer.phtml";
+include "views/layout/scriptjs.phtml";
+?>
