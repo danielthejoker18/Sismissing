@@ -30,34 +30,6 @@ class UserController
         $o_view->showContents();
     }
 
-    public function listUsersAction()
-    {
-        $o_login = new LoginModel();
-        if ($o_login->checkLogin() == false) {
-            Application::redirect('?ctrl=Login&acao=login');
-            return;
-        }
-        if($o_login->checkLogin() == 'lock')
-        {
-            Application::redirect('?ctrl=Login&act=lockscreen');
-            return;
-        }
-
-        $o_User = new UserModel();
-
-        //Listando os contatos cadastrados
-        //$v_users = $o_User->_listUsers();
-
-        $o_view = new View('views/site/User/listUsers.phtml');
-
-        //Passando os dados do contato para a View
-        $o_view->setParams(array(
-            'pageTitle' => 'Lista de Usuários'));
-
-        //Imprimindo código HTML
-        $o_view->showContents();
-    }
-
     /**
      * Gerencia a requisiçães de criação
      * e edição dos USUÁRIOS
