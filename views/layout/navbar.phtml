@@ -2,7 +2,6 @@
 require_once "models/UserModel.php";
 
 $o_user = new UserModel();
-$_COOKIE['st_name'] = $_SESSION['st_name'];
 ?>
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="display: flex;">
@@ -29,7 +28,7 @@ $_COOKIE['st_name'] = $_SESSION['st_name'];
      </li>
      <li class="nav-item">
 
-			 <span class="nav-link" style="color: #ECB11F; font-size:13px; font-weight: normal;"><?php echo "".$_COOKIE["st_name"];?></span>
+			 <span class="nav-link" style="color: #ECB11F; font-size:13px; font-weight: normal;"><?php echo $_SESSION["st_name"];?></span>
 		</li>
 
         <!-- Logout Button -->
